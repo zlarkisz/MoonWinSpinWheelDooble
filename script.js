@@ -1,14 +1,16 @@
 const popup = document.getElementById("popup");
+const title = document.getElementById("popup-title");
 const main = document.getElementById("main");
 
 const popupAnimationClasses = [
   { name: "popup_show", element: popup },
   { name: "main_hide", element: main },
+  { name: "title_show", element: title },
 ];
 
-// if (localStorage.getItem("showPopup")) {
-//   animatePopup();
-// }
+if (localStorage.getItem("showPopup")) {
+  animatePopup();
+}
 
 const imageWheelButton = document.getElementById("imageWheelButton");
 const wheelArrow = document.getElementById("wheelArrow");
@@ -38,6 +40,7 @@ function handleSpinButtonClick() {
 
 function animatePopup() {
   addAnimationClasses(popupAnimationClasses);
+  addAnimationClasses(titleAnimationClasses);
 }
 
 imageWheelButton.addEventListener("click", handleSpinButtonClick);
